@@ -1,12 +1,12 @@
 <?php
 	// This is the file for the parent class
-
+	// Create a monster
 	class Monster {
 
 		var $flies;
 		var $fangs;
 		var $hair;
-		var $alignment;
+		private $alignment;
 
 		function __construct ($flies, $fangs, $hair, $alignment)
 		{
@@ -16,25 +16,16 @@
 			$this->alignment = $alignment;
 		}
 
-		public function can_fly()
+		// return its private attirbute alignment
+		function __get($alignment)
 		{
-			return $this->flies;
+			return $this->alignment;
 		}
 
 		function has_fangs()
 		{
 			return $this->fangs;
 		}
+}
 
-		public function how_hairy()
-		{
-			return $this->hair;
-		}
-
-		function its_alignment()
-		{
-			return $this->alignment;
-		}
-
-	}
 ?>
